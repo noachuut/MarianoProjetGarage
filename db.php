@@ -1,9 +1,9 @@
 <?php
 // db.php
-$host = 'localhost';
-$db   = 'garage';
-$user = 'root';
-$pass = '';
+$host = getenv('DB_HOST') ?: 'localhost';
+$db   = getenv('DB_NAME') ?: 'garage';
+$user = getenv('DB_USER') ?: 'root';
+$pass = getenv('DB_PASSWORD') ?: '';
 $dsn  = "mysql:host=$host;dbname=$db;charset=utf8mb4";
 
 try {
