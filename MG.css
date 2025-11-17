@@ -1,0 +1,283 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: lightslategray;
+    align-items: center;
+    padding: 20px;
+    z-index: 10;
+}
+
+/* Logo */
+.nav-left img {
+    width: 70px;
+    border-radius: 50%;
+    height: 70px;
+    margin-left: 20px;
+}
+
+/* MENU */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 1.2em;
+    transition: transform 0.3s, filter 0.3s;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    transform: scale(1.2);
+    filter: invert(1);
+}
+
+/*Ranger les voitures*/ 
+.voitures-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2 ou 3 colonnes automatiques */
+    gap: 20px; /* Espacement entre les cartes */
+    padding: 20px;
+}
+
+.voitures {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.voitures img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+
+
+/* Grille des images */
+.images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    margin-top: 0; /* Décalage sous la vidéo */
+    padding-top: 80px;
+}
+
+.images img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+/* Footer Logo Slider */
+.logo-slider {
+    overflow: hidden;
+    background-color: black;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+/* Conteneur qui contient les logos */
+.logo-track {
+    display: flex;
+    width: calc(200px * 16); /* Ajuste la largeur en fonction du nombre d'images */
+    animation: scroll 20s linear infinite;
+}
+
+/* Style des logos */
+.logo-track img {
+    width: 100px; /* Ajuste la taille des logos */
+    margin: 0 15px;
+    object-fit: contain;
+}
+
+/* Footer */
+
+footer {
+    margin-top: 20px;
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+footer a img {
+    margin: 10px;
+}
+
+footer img {
+    transition: transform 0.3s, filter 0.3s;
+}
+
+footer img:hover {
+    transform: scale(1.2);
+    filter: invert(1); /*Inverse les couleurs de l'image */
+}
+
+
+
+/* Structure du footer */
+
+.footer-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px 0;
+    background-color: black;
+}
+
+.footer-column h2 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.footer-column p {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    min-width: 250px;
+}
+
+.footer-column h3 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+
+
+.footer-column a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.footer-column a img {
+    margin-right: 10px;
+    width: 45px;
+}
+.footer-column img {
+    margin-right: 10px;
+    width: 90px;
+}
+
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.payment-icons img {
+    width: 60px;
+    height: auto;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Animation fluide du scroll */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ------ RESPONSIVE DESIGN ------ */
+
+/* Pour les tablettes et mobiles */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+
+    nav h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .images {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+/* Pour les petits écrans (téléphones) */
+@media screen and (max-width: 480px) {
+    nav h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+    }
+
+    .images img {
+        height: 180px;
+    }
+}
